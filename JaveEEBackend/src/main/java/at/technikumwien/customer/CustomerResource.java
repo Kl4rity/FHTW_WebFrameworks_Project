@@ -23,47 +23,49 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 import javax.ws.rs.core.Response.Status;
 
-@Path("/news")
+@Path("/customers")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
-public class NewsResource {
-	private static final Logger LOGGER = Logger.getLogger(NewsResource.class.getName()); 
+public class CustomerResource {
+	private static final Logger LOGGER = Logger.getLogger(CustomerService.class.getName()); 
 	
 	@PersistenceContext
 	private EntityManager em;
 	@Inject
-	private NewsService newsService;
+	private CustomerService customersService;
 	@Context
 	private UriInfo uriInfo;
 	
 	@POST
 	@Transactional
-	public Response create(News news) {
-		LOGGER.info("create >> news=" + news);
+	public Response create(Customer customers) {
+		LOGGER.info("create >> customers=" + customers);
 		
-		em.persist(news);
-		URI uri = uriInfo.getAbsolutePathBuilder().path(news.getId().toString()).build();
+		em.persist(customers);
+		URI uri = uriInfo.getAbsolutePathBuilder().path(customers.getId().toString()).build();
 		return Response.created(uri).build();
 	}
 	
 	@GET
 	@Path("/{id}")
-	public News retrieve(@PathParam("id") long id) {
+	public Customer retrieve(@PathParam("id") long id) {
 		LOGGER.info("retrieve >> id=" + id);
 		
-		return em.find(News.class, id);
+		return em.find(Customer.class, id);
 	}
 	
 	@PUT
 	@Path("/{id}")
 	@Transactional
-	public void update(@PathParam("id") long id, News newsNew) {
-		LOGGER.info("update >> id=" + id + ", news=" + newsNew);
+	public void update(@PathParam("id") long id, Customer customerNew) {
+		LOGGER.info("update >> id=" + id + ", customers=" + customerNew);
 
-		News newsOld = em.find(News.class, id);
-		if (newsOld != null) {
-			newsOld.setTitle(newsNew.getTitle());
-			newsOld.setText(newsNew.getText());
+		Customer customerOld = em.find(Customer.class, id);
+		if (customerOld != null) {
+			customerOld.setFirstname(customerNew.getFirstname());
+			customerOld.setLastname(customerNew.getLastname());
+			customerOld.setActiveState(customerNew.getActiveState());
+			customerOld.setBirthDate(customerNew.getBirthDate());
 		}
 		else {
 			throw new WebApplicationException(Status.NOT_FOUND);
@@ -76,9 +78,9 @@ public class NewsResource {
 	public void delete(@PathParam("id") long id) {
 		LOGGER.info("delete >> id=" + id);
 		
-		News news = em.find(News.class, id);
-		if (news != null) {
-			em.remove(news);
+		Customer customer = em.find(Customer.class, id);
+		if (customer != null) {
+			em.remove(customer);
 		}
 		else {
 			throw new WebApplicationException(Status.NOT_FOUND);
@@ -86,9 +88,9 @@ public class NewsResource {
 	}	
 	
 	@GET
-	public List<News> retrieveAll() {
+	public List<Customer> retrieveAll() {
 		LOGGER.info("retrieveAll");
 
-		return newsService.getAllNews();  
+		return customersService.getAllCustomers();  
 	}
 }
