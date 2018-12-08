@@ -1,0 +1,103 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf100
+{\fonttbl\f0\fnil\fcharset0 Monaco;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs22 \cf0 15:37:03,086 INFO  [org.jboss.as.webservices] (MSC service thread 1-3) WFLYWS0004: Stopping service jboss.ws.endpoint."customer.war"."at.technikumwien.customer.NewsWebService"\
+15:37:03,100 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) WFLYSRV0028: Stopped deployment customer.war (runtime-name: customer.war) in 15ms\
+15:37:03,101 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) WFLYSRV0027: Starting deployment of "customer.war" (runtime-name: "customer.war")\
+15:37:03,294 INFO  [org.jboss.as.jpa] (MSC service thread 1-3) WFLYJPA0002: Read persistence.xml for NewsPU\
+15:37:03,312 INFO  [org.jboss.weld.deployer] (MSC service thread 1-4) WFLYWELD0003: Processing weld deployment customer.war\
+15:37:03,320 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-4) WFLYEJB0473: JNDI bindings for session bean named 'NewsService' in deployment unit 'deployment "customer.war"' are as follows:\
+\
+	java:global/customer/NewsService!at.technikumwien.customer.NewsService\
+	java:app/customer/NewsService!at.technikumwien.customer.NewsService\
+	java:module/NewsService!at.technikumwien.customer.NewsService\
+	java:global/customer/NewsService\
+	java:app/customer/NewsService\
+	java:module/NewsService\
+\
+15:37:03,367 INFO  [org.jboss.ws.cxf.metadata] (MSC service thread 1-6) JBWS024061: Adding service endpoint metadata: id=at.technikumwien.customer.NewsWebService\
+ address=http://localhost:8080/customer/NewsWebService\
+ implementor=at.technikumwien.customer.NewsWebService\
+ serviceName=\{http://customer.technikumwien.at/\}NewsWebServiceService\
+ portName=\{http://customer.technikumwien.at/\}NewsWebServicePort\
+ annotationWsdlLocation=null\
+ wsdlLocationOverride=null\
+ mtomEnabled=false\
+15:37:03,381 INFO  [org.apache.cxf.wsdl.service.factory.ReflectionServiceFactoryBean] (MSC service thread 1-6) Creating Service \{http://customer.technikumwien.at/\}NewsWebServiceService from class at.technikumwien.customer.NewsWebService\
+15:37:03,398 INFO  [org.apache.cxf.endpoint.ServerImpl] (MSC service thread 1-6) Setting the server's publish address to be http://localhost:8080/customer/NewsWebService\
+15:37:03,407 INFO  [org.jboss.ws.cxf.deployment] (MSC service thread 1-6) JBWS024074: WSDL published to: file:/Users/cstift/Desktop/wildfly-12.0.0.Final/standalone/data/wsdl/customer.war/NewsWebServiceService.wsdl\
+15:37:03,420 INFO  [org.jboss.as.webservices] (MSC service thread 1-1) WFLYWS0003: Starting service jboss.ws.endpoint."customer.war"."at.technikumwien.customer.NewsWebService"\
+15:37:03,430 ERROR [org.jboss.as.controller.management-operation] (DeploymentScanner-threads - 1) WFLYCTL0013: Operation ("full-replace-deployment") failed - address: ([]) - failure description: \{\
+    "WFLYCTL0412: Required services that are not installed:" => [\
+        "jboss.deployment.unit.\\"customer.war\\".component.\\"javax.servlet.jsp.jstl.tlv.PermittedTaglibsTLV\\".WeldInstantiator",\
+        "jboss.deployment.unit.\\"customer.war\\".component.\\"javax.servlet.jsp.jstl.tlv.PermittedTaglibsTLV\\".START",\
+        "jboss.deployment.unit.\\"customer.war\\".component.\\"at.technikumwien.customer.NewsWebService\\".WeldInstantiator",\
+        "jboss.naming.context.java.jboss.datasources.NewsDS",\
+        "jboss.deployment.unit.\\"customer.war\\".ee.ComponentRegistry",\
+        "jboss.deployment.unit.\\"customer.war\\".component.NewsService.WeldInterceptorBindingsService",\
+        "jboss.deployment.unit.\\"customer.war\\".component.\\"com.sun.faces.config.ConfigureListener\\".WeldInstantiator",\
+        "jboss.undertow.deployment.default-server.default-host./customer",\
+        "jboss.naming.context.java.module.customer.customer.env.\\"at.technikumwien.customer.NewsService\\".em",\
+        "jboss.deployment.unit.\\"customer.war\\".component.\\"com.sun.faces.config.ConfigureListener\\".START",\
+        "jboss.persistenceunit.\\"customer.war#NewsPU\\"",\
+        "jboss.deployment.unit.\\"customer.war\\".component.\\"at.technikumwien.customer.NewsServlet\\".START",\
+        "jboss.deployment.unit.\\"customer.war\\".component.\\"javax.faces.webapp.FacetTag\\".START",\
+        "jboss.deployment.unit.\\"customer.war\\".component.\\"javax.faces.webapp.FacetTag\\".WeldInstantiator",\
+        "jboss.undertow.deployment.default-server.default-host./customer.UndertowDeploymentInfoService",\
+        "jboss.deployment.unit.\\"customer.war\\".component.\\"at.technikumwien.customer.NewsServlet\\".WeldInstantiator",\
+        "jboss.persistenceunit.\\"customer.war#NewsPU\\".__FIRST_PHASE__",\
+        "jboss.deployment.unit.\\"customer.war\\".component.\\"org.jboss.weld.module.web.servlet.WeldInitialListener\\".WeldInstantiator",\
+        "jboss.deployment.unit.\\"customer.war\\".component.\\"org.jboss.weld.module.web.servlet.WeldTerminalListener\\".WeldInstantiator",\
+        "jboss.deployment.unit.\\"customer.war\\".component.\\"javax.servlet.jsp.jstl.tlv.ScriptFreeTLV\\".WeldInstantiator",\
+        "jboss.deployment.unit.\\"customer.war\\".weld.weldClassIntrospector",\
+        "jboss.deployment.unit.\\"customer.war\\".jndiDependencyService",\
+        "jboss.deployment.unit.\\"customer.war\\".component.\\"at.technikumwien.customer.NewsWebService\\".START",\
+        "jboss.deployment.unit.\\"customer.war\\".component.\\"javax.servlet.jsp.jstl.tlv.ScriptFreeTLV\\".START",\
+        "jboss.deployment.unit.\\"customer.war\\".component.\\"org.jboss.weld.module.web.servlet.WeldTerminalListener\\".START",\
+        "jboss.deployment.unit.\\"customer.war\\".component.NewsService.START",\
+        "jboss.deployment.unit.\\"customer.war\\".component.NewsService.WeldInstantiator",\
+        "jboss.deployment.unit.\\"customer.war\\".WeldStartService",\
+        "jboss.deployment.unit.\\"customer.war\\".component.\\"org.jboss.weld.module.web.servlet.WeldInitialListener\\".START"\
+    ],\
+    "WFLYCTL0180: Services with missing/unavailable dependencies" => [\
+        "jboss.deployment.unit.\\"customer.war\\".component.\\"com.sun.faces.config.ConfigureListener\\".START is missing [jboss.deployment.unit.\\"customer.war\\".component.\\"com.sun.faces.config.ConfigureListener\\".WeldInstantiator, jboss.deployment.unit.\\"customer.war\\".jndiDependencyService, jboss.persistenceunit.\\"customer.war#NewsPU\\"]",\
+        "jboss.deployment.unit.\\"customer.war\\".component.\\"javax.servlet.jsp.jstl.tlv.PermittedTaglibsTLV\\".START is missing [jboss.deployment.unit.\\"customer.war\\".component.\\"javax.servlet.jsp.jstl.tlv.PermittedTaglibsTLV\\".WeldInstantiator, jboss.deployment.unit.\\"customer.war\\".jndiDependencyService, jboss.persistenceunit.\\"customer.war#NewsPU\\"]",\
+        "jboss.deployment.unit.\\"customer.war\\".jndiDependencyService is missing [jboss.naming.context.java.module.customer.customer.env.\\"at.technikumwien.customer.NewsService\\".em]",\
+        "jboss.undertow.deployment.default-server.default-host./customer is missing [jboss.persistenceunit.\\"customer.war#NewsPU\\".__FIRST_PHASE__, jboss.deployment.unit.\\"customer.war\\".component.\\"javax.faces.webapp.FacetTag\\".START, jboss.deployment.unit.\\"customer.war\\".component.\\"at.technikumwien.customer.NewsWebService\\".START, jboss.deployment.unit.\\"customer.war\\".WeldStartService, jboss.deployment.unit.\\"customer.war\\".component.\\"com.sun.faces.config.ConfigureListener\\".START, jboss.undertow.deployment.default-server.default-host./customer.UndertowDeploymentInfoService, jboss.deployment.unit.\\"customer.war\\".component.\\"javax.servlet.jsp.jstl.tlv.ScriptFreeTLV\\".START, jboss.deployment.unit.\\"customer.war\\".component.\\"org.jboss.weld.module.web.servlet.WeldInitialListener\\".START, jboss.deployment.unit.\\"customer.war\\".component.\\"org.jboss.weld.module.web.servlet.WeldTerminalListener\\".START, jboss.deployment.unit.\\"customer.war\\".component.\\"javax.servlet.jsp.jstl.tlv.PermittedTaglibsTLV\\".START, jboss.persistenceunit.\\"customer.war#NewsPU\\", jboss.deployment.unit.\\"customer.war\\".component.\\"at.technikumwien.customer.NewsServlet\\".START, jboss.deployment.unit.\\"customer.war\\".component.NewsService.START]",\
+        "jboss.deployment.unit.\\"customer.war\\".CdiValidatorFactoryService is missing [jboss.deployment.unit.\\"customer.war\\".WeldStartService]",\
+        "jboss.deployment.unit.\\"customer.war\\".component.NewsService.START is missing [jboss.naming.context.java.module.customer.customer.env.\\"at.technikumwien.customer.NewsService\\".em, jboss.deployment.unit.\\"customer.war\\".component.NewsService.WeldInstantiator, jboss.deployment.unit.\\"customer.war\\".jndiDependencyService, jboss.persistenceunit.\\"customer.war#NewsPU\\"]",\
+        "jboss.deployment.unit.\\"customer.war\\".component.\\"at.technikumwien.customer.NewsWebService\\".START is missing [jboss.deployment.unit.\\"customer.war\\".jndiDependencyService, jboss.deployment.unit.\\"customer.war\\".component.\\"at.technikumwien.customer.NewsWebService\\".WeldInstantiator, jboss.persistenceunit.\\"customer.war#NewsPU\\"]",\
+        "jboss.deployment.unit.\\"customer.war\\".component.NewsService.WeldInterceptorBindingsService is missing [jboss.deployment.unit.\\"customer.war\\".WeldStartService]",\
+        "jboss.persistenceunit.\\"customer.war#NewsPU\\".__FIRST_PHASE__ is missing [jboss.naming.context.java.jboss.datasources.NewsDS]",\
+        "jboss.deployment.unit.\\"customer.war\\".component.\\"at.technikumwien.customer.NewsServlet\\".START is missing [jboss.deployment.unit.\\"customer.war\\".jndiDependencyService, jboss.deployment.unit.\\"customer.war\\".component.\\"at.technikumwien.customer.NewsServlet\\".WeldInstantiator, jboss.persistenceunit.\\"customer.war#NewsPU\\"]",\
+        "jboss.naming.context.java.module.customer.customer.env.\\"at.technikumwien.customer.NewsService\\".em is missing [jboss.persistenceunit.\\"customer.war#NewsPU\\"]",\
+        "jboss.deployment.unit.\\"customer.war\\".component.\\"javax.faces.webapp.FacetTag\\".WeldInstantiator is missing [jboss.deployment.unit.\\"customer.war\\".WeldStartService]",\
+        "jboss.deployment.unit.\\"customer.war\\".component.\\"org.jboss.weld.module.web.servlet.WeldTerminalListener\\".WeldInstantiator is missing [jboss.deployment.unit.\\"customer.war\\".WeldStartService]",\
+        "jboss.persistenceunit.\\"customer.war#NewsPU\\" is missing [jboss.persistenceunit.\\"customer.war#NewsPU\\".__FIRST_PHASE__, jboss.naming.context.java.jboss.datasources.NewsDS]",\
+        "jboss.deployment.unit.\\"customer.war\\".component.\\"org.jboss.weld.module.web.servlet.WeldInitialListener\\".START is missing [jboss.deployment.unit.\\"customer.war\\".jndiDependencyService, jboss.deployment.unit.\\"customer.war\\".component.\\"org.jboss.weld.module.web.servlet.WeldInitialListener\\".WeldInstantiator]",\
+        "jboss.deployment.unit.\\"customer.war\\".component.\\"org.jboss.weld.module.web.servlet.WeldInitialListener\\".WeldInstantiator is missing [jboss.deployment.unit.\\"customer.war\\".WeldStartService]",\
+        "jboss.deployment.unit.\\"customer.war\\".WeldEndInitService is missing [jboss.deployment.unit.\\"customer.war\\".component.\\"javax.faces.webapp.FacetTag\\".START, jboss.deployment.unit.\\"customer.war\\".component.\\"at.technikumwien.customer.NewsWebService\\".START, jboss.deployment.unit.\\"customer.war\\".WeldStartService, jboss.deployment.unit.\\"customer.war\\".component.\\"com.sun.faces.config.ConfigureListener\\".START, jboss.deployment.unit.\\"customer.war\\".component.\\"javax.servlet.jsp.jstl.tlv.ScriptFreeTLV\\".START, jboss.deployment.unit.\\"customer.war\\".component.\\"org.jboss.weld.module.web.servlet.WeldInitialListener\\".START, jboss.deployment.unit.\\"customer.war\\".component.\\"org.jboss.weld.module.web.servlet.WeldTerminalListener\\".START, jboss.deployment.unit.\\"customer.war\\".component.\\"javax.servlet.jsp.jstl.tlv.PermittedTaglibsTLV\\".START, jboss.deployment.unit.\\"customer.war\\".component.\\"at.technikumwien.customer.NewsServlet\\".START, jboss.deployment.unit.\\"customer.war\\".component.NewsService.START]",\
+        "jboss.deployment.unit.\\"customer.war\\".component.\\"org.jboss.weld.module.web.servlet.WeldTerminalListener\\".START is missing [jboss.deployment.unit.\\"customer.war\\".component.\\"org.jboss.weld.module.web.servlet.WeldTerminalListener\\".WeldInstantiator, jboss.deployment.unit.\\"customer.war\\".jndiDependencyService]",\
+        "jboss.deployment.unit.\\"customer.war\\".component.\\"at.technikumwien.customer.NewsWebService\\".WeldInstantiator is missing [jboss.deployment.unit.\\"customer.war\\".WeldStartService]",\
+        "jboss.deployment.unit.\\"customer.war\\".ee.ComponentRegistry is missing [jboss.deployment.unit.\\"customer.war\\".weld.weldClassIntrospector]",\
+        "jboss.deployment.unit.\\"customer.war\\".deploymentCompleteService is missing [jboss.persistenceunit.\\"customer.war#NewsPU\\".__FIRST_PHASE__, jboss.deployment.unit.\\"customer.war\\".component.\\"javax.faces.webapp.FacetTag\\".START, jboss.deployment.unit.\\"customer.war\\".component.\\"at.technikumwien.customer.NewsWebService\\".START, jboss.deployment.unit.\\"customer.war\\".component.\\"com.sun.faces.config.ConfigureListener\\".START, jboss.undertow.deployment.default-server.default-host./customer, jboss.deployment.unit.\\"customer.war\\".component.\\"javax.servlet.jsp.jstl.tlv.ScriptFreeTLV\\".START, jboss.deployment.unit.\\"customer.war\\".component.\\"org.jboss.weld.module.web.servlet.WeldInitialListener\\".START, jboss.deployment.unit.\\"customer.war\\".component.\\"org.jboss.weld.module.web.servlet.WeldTerminalListener\\".START, jboss.deployment.unit.\\"customer.war\\".component.\\"javax.servlet.jsp.jstl.tlv.PermittedTaglibsTLV\\".START, jboss.persistenceunit.\\"customer.war#NewsPU\\", jboss.deployment.unit.\\"customer.war\\".component.\\"at.technikumwien.customer.NewsServlet\\".START, jboss.deployment.unit.\\"customer.war\\".component.NewsService.START]",\
+        "jboss.deployment.unit.\\"customer.war\\".component.\\"at.technikumwien.customer.NewsServlet\\".WeldInstantiator is missing [jboss.deployment.unit.\\"customer.war\\".WeldStartService]",\
+        "jboss.deployment.unit.\\"customer.war\\".component.\\"com.sun.faces.config.ConfigureListener\\".WeldInstantiator is missing [jboss.deployment.unit.\\"customer.war\\".WeldStartService]",\
+        "jboss.deployment.unit.\\"customer.war\\".WeldStartService is missing [jboss.deployment.unit.\\"customer.war\\".jndiDependencyService, jboss.persistenceunit.\\"customer.war#NewsPU\\"]",\
+        "jboss.deployment.unit.\\"customer.war\\".weld.weldClassIntrospector is missing [jboss.deployment.unit.\\"customer.war\\".WeldStartService]",\
+        "jboss.deployment.unit.\\"customer.war\\".component.\\"javax.faces.webapp.FacetTag\\".START is missing [jboss.deployment.unit.\\"customer.war\\".component.\\"javax.faces.webapp.FacetTag\\".WeldInstantiator, jboss.deployment.unit.\\"customer.war\\".jndiDependencyService, jboss.persistenceunit.\\"customer.war#NewsPU\\"]",\
+        "jboss.deployment.unit.\\"customer.war\\".component.\\"javax.servlet.jsp.jstl.tlv.ScriptFreeTLV\\".WeldInstantiator is missing [jboss.deployment.unit.\\"customer.war\\".WeldStartService]",\
+        "jboss.deployment.unit.\\"customer.war\\".component.\\"javax.servlet.jsp.jstl.tlv.PermittedTaglibsTLV\\".WeldInstantiator is missing [jboss.deployment.unit.\\"customer.war\\".WeldStartService]",\
+        "jboss.deployment.unit.\\"customer.war\\".component.\\"javax.servlet.jsp.jstl.tlv.ScriptFreeTLV\\".START is missing [jboss.deployment.unit.\\"customer.war\\".jndiDependencyService, jboss.persistenceunit.\\"customer.war#NewsPU\\", jboss.deployment.unit.\\"customer.war\\".component.\\"javax.servlet.jsp.jstl.tlv.ScriptFreeTLV\\".WeldInstantiator]",\
+        "jboss.deployment.unit.\\"customer.war\\".moduleDeploymentRuntimeInformationStart is missing [jboss.deployment.unit.\\"customer.war\\".component.NewsService.START]",\
+        "jboss.deployment.unit.\\"customer.war\\".component.NewsService.WeldInstantiator is missing [jboss.deployment.unit.\\"customer.war\\".WeldStartService, jboss.deployment.unit.\\"customer.war\\".component.NewsService.WeldInterceptorBindingsService]",\
+        "jboss.undertow.deployment.default-server.default-host./customer.UndertowDeploymentInfoService is missing [jboss.deployment.unit.\\"customer.war\\".ee.ComponentRegistry, jboss.deployment.unit.\\"customer.war\\".WeldStartService]"\
+    ]\
+\}\
+15:37:03,439 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 1) WFLYSRV0016: Replaced deployment "customer.war" with deployment "customer.war"\
+}
