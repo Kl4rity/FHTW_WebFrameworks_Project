@@ -20,11 +20,11 @@ import { Customer, CustomerService } from './services';
       </p>
       <p>
         <label for="birthDate">Geburtstag:</label>
-        <input id="birthDate" type="date" name="birthDate" value="{{customer.birthDate | date: 'yyyy-MM-dd'}}" required/>
+        <input id="birthDate" type="date" name="birthDate" value="{{customer.birthDate | date: 'yyyy-MM-dd'}}" (change)="setBirthday($event)" required/>
       </p>
       <p>
         <label for="active">Status Kunde:</label>
-        <input [(ngModel)]="customer.active" id="active" type="checkbox" name="active" required/>
+        <input [(ngModel)]="customer.active" id="active" type="checkbox" name="active"/>
       </p>
       <p>
         <button *ngIf="form.valid" (click)="finishWithOk()">Ok</button>
@@ -70,8 +70,13 @@ export class CustomerInputComponent {
   constructor(private customerService: CustomerService) { 
   }
 
+  setBirthday(event){
+    this.customer.birthDate = new Date(event.target.value);
+  }
+
   startAddingCustomer() {
     this.customer = new Customer();
+    this.customer.active = false;
   }
 
   startEditingCustomer(id: number) {
