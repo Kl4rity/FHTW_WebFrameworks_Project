@@ -107,15 +107,15 @@ export class CustomerListComponent implements OnInit {
       }
       let firstNameIsRelevant = true;
       if(this.filter.firstName){
-        firstNameIsRelevant = (customerCandidate.firstName.includes(this.filter.firstName)) ? true : false;
+        firstNameIsRelevant = (customerCandidate.firstName.toUpperCase().includes(this.filter.firstName.toUpperCase())) ? true : false;
       }
       let lastNameIsRelevant = true;
       if(this.filter.lastName){
-        lastNameIsRelevant = (customerCandidate.lastName.includes(this.filter.lastName)) ? true : false;
+        lastNameIsRelevant = (customerCandidate.lastName.toUpperCase().includes(this.filter.lastName.toUpperCase())) ? true : false;
       }
       let birthDateIsRelevant = true;
       if(this.filter.birthDate){
-        birthDateIsRelevant = (customerCandidate.birthDate > this.filter.birthDate ? true : false;
+        birthDateIsRelevant = (new Date(customerCandidate.birthDate) > new Date(this.filter.birthDate)) ? true : false;
       }
       let activeStateIsRelevant = true;
       activeStateIsRelevant = (customerCandidate.active == this.filter.active) ? true : false;
