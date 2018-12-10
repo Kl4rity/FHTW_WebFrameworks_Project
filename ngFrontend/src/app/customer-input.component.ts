@@ -20,7 +20,7 @@ import { Customer, CustomerService } from './services';
       </p>
       <p>
         <label for="birthDate">Geburtstag:</label>
-        <input [(ngModel)]="customer.birthDate" id="birthDate" type="date" name="birthDate" required/>
+        <input id="birthDate" type="date" name="birthDate" value="{{customer.birthDate | date: 'yyyy-MM-dd'}}" required/>
       </p>
       <p>
         <label for="active">Status Kunde:</label>
@@ -67,7 +67,8 @@ export class CustomerInputComponent {
   @Output() cancel = new EventEmitter();
   customer: Customer;
 
-  constructor(private customerService: CustomerService) { }
+  constructor(private customerService: CustomerService) { 
+  }
 
   startAddingCustomer() {
     this.customer = new Customer();
